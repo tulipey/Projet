@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <style>
+        #cambembert {
+            position:relative;
+            width:120px; height:120px;
+        }
+        #cambembertVert, #cambembertRouge1, #cambembertRouge2 {
+            position: absolute;
+            width:0; height:0;
+            border:60px solid green;
+            border-radius:60px;
+        }
+        #cambembertVert {
+            z-index: 1;
+        }
+        #cambembertRouge1 {
+            z-index: 2;
+            border:60px solid red;
+            border-top:60px solid transparent;
+            border-right:60px solid transparent;
+        }
+        #cambembertRouge2 {
+            z-index: 2;
+            border:60px solid red;
+            border-top:60px solid transparent;
+            border-right:60px solid transparent;
+            transform: rotate(36deg);
+        }
+
+        #txtVert, #txtRouge {
+            position: absolute;
+            z-index: 3;
+            color:white;
+        }
+        #txtVert {
+            top:30px;
+            left:70px;
+        }
+        #txtRouge {
+            top:60px;
+            left:20px;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="cambembert">
+            <div id="cambembertVert"></div>
+            <div id="cambembertRouge1"></div>
+            <div id="cambembertRouge2"></div>
+            <div id="txtVert">40%</div>
+            <div id="txtRouge">60%</div>
+        </div>
+    </body>
+</html>

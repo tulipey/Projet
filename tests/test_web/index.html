@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="brython.js"></script>
+<script type="text/javascript" src="brython_stdlib.js"></script>
+</head>
+
+<body onload="brython(1)">
+<div class="example" id="ex8">
+    <button id="button8">draw in a canvas</button>
+    <canvas id="zone8" width="200" height="50"
+            style="border-color:#000;border-style:solid;border-width:1px;margin-left:5em;"></canvas>
+
+    <script type="text/python" id="script8">
+    from browser import document, html
+    import math
+    import matplotlib.pyplot
+    import numpy
+
+    list1=[]
+    nom=[]
+
+    def draw(envent):
+        plt.style.use('_mpl-gallery-nogrid')
+
+        # make data
+        nom = [1, 2, 3, 4]
+        colors = plt.get_cmap('Greens')(np.linspace(0.2, 0.7, len(nom)))
+
+        # plot
+        fig, ax = plt.subplots()
+        ax.pie(nom, colors=colors, radius=3, center=(4, 4),
+            wedgeprops={"linewidth": 1, "edgecolor": "white"}, frame=True)
+
+        ax.set(xlim=(0, 8), xticks=np.arange(1, 8),
+             ylim=(0, 8), yticks=np.arange(1, 8))
+
+        plt.show()
+
+
+    document["button8"].bind("click", draw)
+    </script>
+</body>
+
+</html>
